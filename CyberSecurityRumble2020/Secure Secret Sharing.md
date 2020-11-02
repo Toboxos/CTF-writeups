@@ -95,7 +95,7 @@ Our only idea was to dump the entries of the database until we find our flag.
 
 We used the input ```?secid[$regex]=^``` to get every entry where the hash starts with a specific sequence. 
 However findOne only returns the entry which were found first in the database.
-That leads to the problem if the hash of the flag begins with the same sequence as the hash of a random entry we would never find the flag if choose a start sequence wich is too short:
+That leads to the problem if the hash of the flag begins with the same sequence as the hash of a random entry we would never find the flag if we choose a start sequence wich is too short:
 ```
 start sequence: 78fc4a
 
@@ -115,8 +115,8 @@ With some divine inspiration I've started to see the hashes like a tree structur
 
 ![HashTreeStructure](./secure_secret_sharing.svg)
 
-The problem of finding the coorect hash is now a tree traversal task. We start from the top node and traversal each node until we've find the flag. 
-For optimization I also added following rule for optimization:
+The problem of finding the correct hash is now a tree traversal task. We start from the top node and traversal each node until we've find the flag. 
+For optimization I also added following rule:
 
 * If a node has only one child node we assume it's going to result in only one hash so we dont traversal the path of the child node
 
