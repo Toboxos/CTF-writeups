@@ -121,3 +121,5 @@ For optimization I also added following rule for optimization:
 * If a node has only one child node we assume it's going to result in only one hash so we dont traversal the path of the child node
 
 We've paralized the traversal by starting an own process for every node in the first layer (0, 1, 2, ..., f). Th solution code used in the competition can be found here: [secure_secret_sharing.py](secure_secret_sharing.py)
+
+The result was ```62156 CSR{We_Call_Him_Little_Bobby_NoTables}```.
