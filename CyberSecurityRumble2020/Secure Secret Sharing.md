@@ -111,13 +111,13 @@ We've implemented that with the mongodb query operator  ```$not: { $regex: ''}}`
 After dumping like 200 entries we've got a HTTP error that the uri of our request was too long. So we stopped this approach.
 
 Unsatisfied that we still weren't able to get the flag I took a short brake and thought deeper of our problem. 
-With some divine inspiration I've started to see the hashes like a tree structure:
+With some divine inspiration I've started to see the hashes like a tree structure (the hashes are just examples):
 
-IMAGE HERE!!!
+![HashTreeStructure](./secure_secret_sharing.svg)
 
 The problem of finding the coorect hash is now a tree traversal task. We start from the top node and traversal each node until we've find the flag. 
 For optimization I also added following rule for optimization:
 
 * If a node has only one child node we assume it's going to result in only one hash so we dont traversal the path of the child node
 
-We've paralized the traversal by starting an own process for every node in the first layer (0, 1, 2, ..., f). Th solution code used in the competition can be found here: LINK CODE HERE!!
+We've paralized the traversal by starting an own process for every node in the first layer (0, 1, 2, ..., f). Th solution code used in the competition can be found here: [secure_secret_sharing.py](secure_secret_sharing.py)
